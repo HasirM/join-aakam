@@ -3,20 +3,6 @@ var divs = $('.show-section section');
 var now = 0; // currently shown div
 divs.hide().first().show(); // hide all divs except first
 
-const element = document.querySelectorAll(".badge__char");
-const step = 360/element.length;
-
-element.forEach((elem, i) => {
-  elem.style.setProperty('--char-rotate', (i * step) + 'deg');
-})
-
-const foo = (360 / 7);
-
-for (i = 0; i <= 7; i++) {
-  console.log((i * foo) + 'deg');
-}
-
-
 function next()
 {
     divs.eq(now).hide();
