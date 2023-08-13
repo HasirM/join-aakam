@@ -65,7 +65,7 @@
   width: 100%;
   display: grid;
   place-items: center;
-  bottom: 5%;
+  bottom: 50px;
   overflow: hidden;
   z-index: 1;
 }
@@ -180,40 +180,39 @@
 
 
 
-  /* rotating logo */
+  /* rotating logo
   
 #circle { position: absolute; width: 100%; padding-bottom: 300px; overflow: hidden; }
 
 #circle text { font-family: 'Helvetica Neue', Arial; font-size: 11px; font-weight: bold; }
 
-#circle svg {     position: absolute;
-  left: 650px;
-  top: -25px;
+#circle svg {
+  position: absolute;
+  left: 35%;
+  top: -5%;
   width: 100%;
   height: 250px;
   z-index: 100;
-
   -webkit-animation-name: rotate;
-     -moz-animation-name: rotate;
-      -ms-animation-name: rotate;
-       -o-animation-name: rotate;
-          animation-name: rotate;
+  -moz-animation-name: rotate;
+  -ms-animation-name: rotate;
+  -o-animation-name: rotate;
+  animation-name: rotate;
   -webkit-animation-duration: 15s;
-     -moz-animation-duration: 15s;
-      -ms-animation-duration: 15s;
-       -o-animation-duration: 15s;
-          animation-duration: 15s;
+  -moz-animation-duration: 15s;
+  -ms-animation-duration: 15s;
+  -o-animation-duration: 15s;
+  animation-duration: 15s;
   -webkit-animation-iteration-count: infinite;
-     -moz-animation-iteration-count: infinite;
-      -ms-animation-iteration-count: infinite;
-       -o-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
-     -moz-animation-timing-function: linear;
-      -ms-animation-timing-function: linear;
-       -o-animation-timing-function: linear;
-          animation-timing-function: linear;
-
+  -moz-animation-timing-function: linear;
+  -ms-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
 }
 
 @-webkit-keyframes rotate {
@@ -236,4 +235,84 @@
     from { transform: rotate(0); }
     to { transform: rotate(360deg); }
 }
+ */
 
+
+ .badge {
+  --badge-size: 160px;
+  --badge-color: var(--black);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: var(--badge-size);
+  height: var(--badge-size);
+
+  background: var(--black);
+  border-radius: 100%;
+  box-shadow: inset 0 0 0 0.9rem var(--badge-color);
+  animation: identifier 20s linear infinite;
+}
+
+.badge__emoji {
+  display: block;
+  margin: 0;
+  animation: identifier 20s linear infinite;
+  animation-direction: reverse;
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+.badge__char {
+  --char-font-weight: 600;
+  --char-font-size: 1em;
+  --char-width: 10px;
+  --char-font-family: "Arial", sans-serif;
+
+  display: block;
+  position: absolute;
+  top: 0;
+  left: calc(50% - var(--char-width) / 2);
+  height: calc(var(--badge-size) / 2);
+  width: var(--char-width);
+  background-repeat: round;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1rem;
+
+  font-weight: var(--char-font-weight);
+  font-size: var(--char-font-size);
+  color: var(--white);
+  font-family: var(--char-font-family);
+  transform-origin: bottom center;
+  transform: rotate(var(--char-rotate));
+}
+
+@-webkit-keyframes identifier {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes identifier {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
