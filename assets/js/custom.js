@@ -169,7 +169,7 @@ $(document).ready(function()
             formvalidate(2);
 
             var re = /^\w+([-+.'][^\s]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-            var email = $("#mail-email").val();
+            var email = $(".mail-email").val();
             var emailFormat = re.test(email);
             
     
@@ -187,11 +187,11 @@ $(document).ready(function()
                 }($('#error').append('<div class="reveal alert alert-danger">Email address is invalid!</div>')));
                 if(emailFormat == true)
                 {
-                $("#mail-email").removeClass('invalid');
+                $(".mail-email").removeClass('invalid');
                 }
                 else
                 {
-                $("#mail-email").addClass('invalid');
+                $(".mail-email").addClass('invalid');
                 }
     
             }
